@@ -1,16 +1,3 @@
-/*Cookies.set('progress', '{ "level"=1 }', { expires: 7 });
-
-$("p").click(function() {
-     console.log(document.cookie)
-     var testObj = JSON.parse(document.cookie)
-     console.log("test = " + testObj.test)
-     document.cookie = "{ test: "+ (testObj.test + 1) +" }"
-     alert( Cookies.get('name') );
- })
-
-$("img").click(function() {
-    Cookies.set('name', 'value', { expires: 7 });
-})*/
 const params = new Proxy(new URLSearchParams(window.location.search), {
   get: (searchParams, prop) => searchParams.get(prop),
 });
@@ -52,30 +39,45 @@ function isLastLevelCorrect() {
 
     switch(levelId) {
         case level1Id :
-            Cookies.set(name, JSON.stringify(futureJson), { expires: 7, path: "/" });
+            Cookies.set(
+                name,
+                JSON.stringify({ finishedLevels: [level1Id] }),
+                { expires: 7, path: "/" }
+            );
             return true;
             break;
         case level2Id :
             if(finishedLevels == [level1Id]) {
-                Cookies.set(name, JSON.stringify(futureJson), { expires: 7, path: "/" });
+                Cookies.set(
+                    name,
+                    JSON.stringify({ finishedLevels: [level1Id, level2Id] }),
+                    { expires: 7, path: "/" }
+                );
                 return true;
             }
             break;
         case level3Id :
             if(finishedLevels == [level1Id, level2Id]){
-                Cookies.set(name, JSON.stringify(futureJson), { expires: 7, path: "/" });
+                Cookies.set(
+                    name,
+                    JSON.stringify({ finishedLevels: [level1Id, level2Id, level3Id] }),
+                    { expires: 7, path: "/" }
+                );
                 return true;
             }
             break;
         case level4Id :
             if(finishedLevels == [level1Id, level2Id, level3Id]){
-                Cookies.set(name, JSON.stringify(futureJson), { expires: 7, path: "/" });
+                Cookies.set(
+                    name,
+                    JSON.stringify({ finishedLevels: [level1Id, level2Id, level3Id, level4Id] }),
+                    { expires: 7, path: "/" }
+                );
                 return true;
             }
             break;
         case level5Id :
             if(finishedLevels == [level1Id, level2Id, level3Id, level4Id]){
-                Cookies.set(name, JSON.stringify(futureJson), { expires: 7, path: "/" });
                 return true;
             }
             break;
