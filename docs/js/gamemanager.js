@@ -25,39 +25,17 @@ function isLastLevelCorrect() {
     let cookie = JSON.parse(Cookies.get(name) ?? '{"finishedLevels":[]}');
     let finishedLevels = cookie.finishedLevels;
 
-    var futureLevels;
-    if(finishedLevels == null) {
-        futureLevels = [];
-    } else {
-        futureLevels = finishedLevels;
-    }
-    futureLevels.push(levelId);
-
-    let futureJson = {
-        finishedLevels: futureLevels
-    };
-
     switch(levelId) {
         case level1Id :
             Cookies.set(
                 name,
-                JSON.stringify({ finishedLevels: [level1Id] }),
+                JSON.stringify({ finishedLevels: [level1Id, level2Id] }),
                 { expires: 7, path: "/" }
             );
             return true;
             break;
         case level2Id :
-            if(finishedLevels == [level1Id]) {
-                Cookies.set(
-                    name,
-                    JSON.stringify({ finishedLevels: [level1Id, level2Id] }),
-                    { expires: 7, path: "/" }
-                );
-                return true;
-            }
-            break;
-        case level3Id :
-            if(finishedLevels == [level1Id, level2Id]){
+            if(finishedLevels.includes(level2Id)) {
                 Cookies.set(
                     name,
                     JSON.stringify({ finishedLevels: [level1Id, level2Id, level3Id] }),
@@ -66,8 +44,8 @@ function isLastLevelCorrect() {
                 return true;
             }
             break;
-        case level4Id :
-            if(finishedLevels == [level1Id, level2Id, level3Id]){
+        case level3Id :
+            if(finishedLevels.includes(level3Id)){
                 Cookies.set(
                     name,
                     JSON.stringify({ finishedLevels: [level1Id, level2Id, level3Id, level4Id] }),
@@ -76,8 +54,18 @@ function isLastLevelCorrect() {
                 return true;
             }
             break;
+        case level4Id :
+            if(finishedLevels.includes(level4Id)){
+                Cookies.set(
+                    name,
+                    JSON.stringify({ finishedLevels: [level1Id, level2Id, level3Id, level4Id, level5Id] }),
+                    { expires: 7, path: "/" }
+                );
+                return true;
+            }
+            break;
         case level5Id :
-            if(finishedLevels == [level1Id, level2Id, level3Id, level4Id]){
+            if(finishedLevels.includes(level5Id)){
                 return true;
             }
             break;
