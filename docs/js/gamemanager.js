@@ -52,30 +52,30 @@ function isLastLevelCorrect() {
 
     switch(levelId) {
         case level1Id :
-            Cookies.set(name, JSON.stringify(futureJson), { expires: 7 });
+            Cookies.set(name, JSON.stringify(futureJson), { expires: 7, path: "/" });
             return true;
             break;
         case level2Id :
             if(finishedLevels == [level1Id]) {
-                Cookies.set(name, JSON.stringify(futureJson), { expires: 7 });
+                Cookies.set(name, JSON.stringify(futureJson), { expires: 7, path: "/" });
                 return true;
             }
             break;
         case level3Id :
             if(finishedLevels == [level1Id, level2Id]){
-                Cookies.set(name, JSON.stringify(futureJson), { expires: 7 });
+                Cookies.set(name, JSON.stringify(futureJson), { expires: 7, path: "/" });
                 return true;
             }
             break;
         case level4Id :
             if(finishedLevels == [level1Id, level2Id, level3Id]){
-                Cookies.set(name, JSON.stringify(futureJson), { expires: 7 });
+                Cookies.set(name, JSON.stringify(futureJson), { expires: 7, path: "/" });
                 return true;
             }
             break;
         case level5Id :
             if(finishedLevels == [level1Id, level2Id, level3Id, level4Id]){
-                Cookies.set(name, JSON.stringify(futureJson), { expires: 7 });
+                Cookies.set(name, JSON.stringify(futureJson), { expires: 7, path: "/" });
                 return true;
             }
             break;
