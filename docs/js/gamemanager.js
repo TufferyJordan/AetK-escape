@@ -22,17 +22,6 @@ const level3Id = "level3-po";
 const level4Id = "level4-ex";
 const level5Id = "level5-zz";
 
-function chooseLanguage(language) {
-    let name = "level";
-    let futureJson = {
-        finishedLevels: [
-            levelId
-        ]
-    };
-    Cookies.set(name, JSON.stringify(futureJson), { expires: 7 });
-}
-
-
 function handleRedirect(levelUrl, language) {
     switch(language) {
         case "english" :
@@ -97,7 +86,7 @@ function isLastLevelCorrect() {
 function redirect(language) {
     const root = "Kelly-escape-hugo/"
     if(!isLastLevelCorrect()) {
-        handleRedirect("/error/error-", language);
+        handleRedirect("/"+ root +"error/error-", language);
         return;
     }
     switch(levelId) {
