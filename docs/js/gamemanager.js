@@ -32,6 +32,7 @@ function chooseLanguage(language) {
     Cookies.set(name, JSON.stringify(futureJson), { expires: 7 });
 }
 
+
 function handleRedirect(levelUrl, language) {
     switch(language) {
         case "english" :
