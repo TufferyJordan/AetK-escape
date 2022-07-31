@@ -1,4 +1,7 @@
 .every {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   margin: auto;
   text-align: center;
   width: 50%;
