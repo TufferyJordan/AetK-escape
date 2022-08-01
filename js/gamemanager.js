@@ -27,45 +27,57 @@ function isLastLevelCorrect() {
 
     switch(levelId) {
         case level1Id :
+            if(!finishedLevels.includes(level1Id)) {
+                finishedLevels.push(level1Id)
+            }
             Cookies.set(
                 name,
-                JSON.stringify({ finishedLevels: [level1Id, level2Id] }),
+                JSON.stringify({ finishedLevels: finishedLevels }),
                 { expires: 7, path: "/" }
             );
             return true;
             break;
         case level2Id :
-            if(finishedLevels.includes(level2Id)) {
+            if(finishedLevels.includes(level1Id)) {
+                if(!finishedLevels.includes(level2Id)) {
+                    finishedLevels.push(level2Id)
+                }
                 Cookies.set(
                     name,
-                    JSON.stringify({ finishedLevels: [level1Id, level2Id, level3Id] }),
+                    JSON.stringify({ finishedLevels: finishedLevels }),
                     { expires: 7, path: "/" }
                 );
                 return true;
             }
             break;
         case level3Id :
-            if(finishedLevels.includes(level3Id)){
+            if(finishedLevels.includes(level2Id)){
+                if(!finishedLevels.includes(level3Id)) {
+                    finishedLevels.push(level3Id)
+                }
                 Cookies.set(
                     name,
-                    JSON.stringify({ finishedLevels: [level1Id, level2Id, level3Id, level4Id] }),
+                    JSON.stringify({ finishedLevels: finishedLevels }),
                     { expires: 7, path: "/" }
                 );
                 return true;
             }
             break;
         case level4Id :
-            if(finishedLevels.includes(level4Id)){
+            if(finishedLevels.includes(level3Id)){
+                if(!finishedLevels.includes(level4Id)) {
+                    finishedLevels.push(level4Id)
+                }
                 Cookies.set(
                     name,
-                    JSON.stringify({ finishedLevels: [level1Id, level2Id, level3Id, level4Id, level5Id] }),
+                    JSON.stringify({ finishedLevels: finishedLevels }),
                     { expires: 7, path: "/" }
                 );
                 return true;
             }
             break;
         case level5Id :
-            if(finishedLevels.includes(level5Id)){
+            if(finishedLevels.includes(level4Id)){
                 return true;
             }
             break;
