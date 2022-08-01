@@ -74,7 +74,7 @@ function isLastLevelCorrect() {
 }
 
 function redirect(language) {
-    const root = "Kelly-escape-hugo/"
+    const root = "AetK-escape/"
     if(!isLastLevelCorrect()) {
         handleRedirect("/"+ root +"error-", language);
         return;
