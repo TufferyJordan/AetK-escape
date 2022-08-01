@@ -8,6 +8,7 @@ const level2Id = "level2-ml";
 const level3Id = "level3-po";
 const level4Id = "level4-ex";
 const level5Id = "level5-zz";
+const root = "AetK-escape/"
 
 function handleRedirect(levelUrl, language) {
     switch(language) {
@@ -86,7 +87,6 @@ function isLastLevelCorrect() {
 }
 
 function redirect(language) {
-    const root = "AetK-escape/"
     if(!isLastLevelCorrect()) {
         handleRedirect("/"+ root +"error-", language);
         return;
@@ -117,4 +117,13 @@ $("#frButton").click(function() {
 
 $("#enButton").click(function() {
     redirect("english");
+});
+
+
+$("#frButtonError").click(function() {
+     handleRedirect("/"+ root +"error-", "french");
+});
+
+$("#enButtonError").click(function() {
+     handleRedirect("/"+ root +"error-", "english");
 });
