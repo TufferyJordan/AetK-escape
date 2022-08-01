@@ -1,5 +1,62 @@
-.every {
+.images {
+  width: 400px;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
   margin: auto;
   text-align: center;
-  width: 50%;
+  color: #d4af37;
+  font-size: 26px;
+}
+
+.subtitle {
+  margin: auto;
+  text-align: center;
+  color: #d4af37;
+  font-size: 18px;
+}
+
+.paragraph {
+  margin: auto;
+  margin-left: 24px;
+  margin-right: 24px;
+  text-align: left;
+  color: #1B1D20;
+  font-size: 13px;
+}
+
+.error {
+  margin: auto;
+  margin-left: 24px;
+  margin-right: 24px;
+  text-align: left;
+  color: #1B1D20;
+  font-size: 16px;
+}
+
+.clue {
+  margin: auto;
+  text-align: center;
+  color: #1B1D20;
+  margin-left: 16px;
+  margin-right: 16px;
+  font-style: italic;
+  font-size: 15px;
+}
+
+.button {
+  text-align: center;
+  color: #FFF;
+  margin: 16px;
+  margin-left: 40px;
+  margin-right: 40px;
+  padding: 8px;
+  background: #d4af37;
+  font-size: 18px;
+  font-family: ;
 }

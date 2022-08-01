@@ -76,24 +76,24 @@ function isLastLevelCorrect() {
 function redirect(language) {
     const root = "Kelly-escape-hugo/"
     if(!isLastLevelCorrect()) {
-        handleRedirect("/"+ root +"error/error-", language);
+        handleRedirect("/"+ root +"error-", language);
         return;
     }
     switch(levelId) {
         case level1Id :
-            handleRedirect("/"+ root +"enigma1-xy/enigma1-", language);
+            handleRedirect("/"+ root +"enigma1-xy-", language);
             break;
         case level2Id :
-            handleRedirect("/"+ root +"enigma2-ml/enigma2-", language);
+            handleRedirect("/"+ root +"enigma2-ml-", language);
             break;
         case level3Id :
-            handleRedirect("/"+ root +"enigma3-po/enigma3-", language);
+            handleRedirect("/"+ root +"enigma3-po-", language);
             break;
         case level4Id :
-            handleRedirect("/"+ root +"enigma4-ex/enigma4-", language);
+            handleRedirect("/"+ root +"enigma4-ex-", language);
             break;
         case level5Id :
-            handleRedirect("/"+ root +"enigma5-zz/enigma5-", language);
+            handleRedirect("/"+ root +"enigma5-zz-", language);
             break;
     }
     return;
